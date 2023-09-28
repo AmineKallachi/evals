@@ -1,0 +1,9 @@
+extractImmo:
+  id: extractImmo.dev.v0
+  description: Verifies if exctracted data from house description matches the actual data
+  metrics: [accuracy]
+
+extractImmo.dev.v0:
+  class: modelgraded/classify.py:ModelBasedClassify
+  args:
+    samples_jsonl: extractImmo/samples.jsonl
