@@ -20,3 +20,19 @@ print("Completions:", completions)  # Output: Completions: ['This is a test resp
 
 # Test Case 3: Testing the response attribute
 print("Response:", completion_result.response)  # Output: Response: This is a test response.
+
+# Example usage with single prompt
+single_prompt = {
+    "question": "Your single question here"
+}
+
+# Example usage with multiple prompts as a list of dictionaries
+multiple_prompts = [
+    {
+        "question": "Question 1",
+    },
+    {
+        "question": "Question 2",
+    },
+    # ... more prompts
+] 

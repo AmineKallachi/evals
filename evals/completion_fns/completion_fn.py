@@ -7,9 +7,9 @@ from sentence_transformers import SentenceTransformer, util
 import openai
 
 OPENAI_URL = "https://api.openai.com/v1/chat/completions"
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = ""
 # Configuration de l'API OpenAI
-openai.api_key = "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"
+openai.api_key = "
 # Configuration de sentence-transformers
 model = SentenceTransformer('paraphrase-distilroberta-base-v1')
 

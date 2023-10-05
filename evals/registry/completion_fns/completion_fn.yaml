@@ -3,6 +3,5 @@ completion_fn:
   args:
     model: paraphrase-distilroberta-base-v1  # Instantiate your model class here
     mongo_client: mongodb://testaigpt:vNzNb9VasogHq3vKMDH3y6Gwcv7ghQmqcJb6VFUgdkGk0IG20d9Gm3lcfmC1PizKl9oNgRnQR1i2ACDbukkr8Q%3D%3D@testaigpt.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@testaigpt@  # MongoDB connection string
-    openai.api_key: "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"
     retrieval_template: "Use the provided context to answer the question. "
     k: 5  # Number of top fragments to consider
