@@ -1,0 +1,11 @@
+roi_eval:
+  id: roi_eval.dev.v0
+  description: <description>
+  metrics: [accuracy]
+
+roi_eval.dev.v0:
+  class: evals.elsuite.modelgraded.classify:ModelBasedClassify
+  args:
+    samples_jsonl: roi_eval/samples.jsonl
+    modelgraded_spec: fact
+

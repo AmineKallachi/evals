@@ -109,6 +109,7 @@ def format_necessary(template: str, allow_missing: bool = False, **kwargs: dict[
         ), f"Required: {keys}, got: {sorted(kwargs)}, no inputs are used.\nTemplate:\n{template}"
         cur_keys = {k: kwargs.get(k, "{" + k + "}") for k in keys}
     else:
+      #  import pdb; pdb.set_trace()
         assert all(
             k in kwargs for k in keys
         ), f"Required: {keys}, got: {sorted(kwargs)}.\nTemplate:\n{template}"
