@@ -13,7 +13,7 @@ openai.api_key = "
 # Configuration de sentence-transformers
 model = SentenceTransformer('paraphrase-distilroberta-base-v1')
 
-mongo_client = MongoClient("mongodb://testaigpt:vNzNb9VasogHq3vKMDH3y6Gwcv7ghQmqcJb6VFUgdkGk0IG20d9Gm3lcfmC1PizKl9oNgRnQR1i2ACDbukkr8Q%3D%3D@testaigpt.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@testaigpt@", retryWrites=False)
+mongo_client = MongoClient(, retryWrites=False)
 
 class MyRetrievalCompletionResult(CompletionResult):
     def __init__(self, response: str) -> None:
