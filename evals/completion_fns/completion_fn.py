@@ -1,19 +1,21 @@
 from ctypes import util
+import openai
 from evals.api import CompletionFn, CompletionResult
 from evals.prompt.base import ChatCompletionPrompt, CompletionPrompt
 from evals.record import record_sampling
 from pymongo import MongoClient
 from sentence_transformers import SentenceTransformer, util
-import openai
+import os
+
 
 OPENAI_URL = "https://api.openai.com/v1/chat/completions"
 OPENAI_API_KEY = ""
+#OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 # Configuration de l'API OpenAI
-openai.api_key = "
 # Configuration de sentence-transformers
 model = SentenceTransformer('paraphrase-distilroberta-base-v1')
 
-mongo_client = MongoClient(, retryWrites=False)
+mongo_client = MongoClient("", retryWrites=False)
 
 class MyRetrievalCompletionResult(CompletionResult):
     def __init__(self, response: str) -> None:
@@ -62,7 +64,7 @@ class MyRetrievalCompletionFn(CompletionFn):
         ]
 
         response = openai.ChatCompletion.create(
-            model="gpt-4",
+            model="gpt-3.5-turbo-16k",
             messages=retrieval_prompt,
             api_key=OPENAI_API_KEY
         )
@@ -70,8 +72,6 @@ class MyRetrievalCompletionFn(CompletionFn):
         answer = response['choices'][0]['message']['content']
         record_sampling(prompt=retrieval_prompt, sampled=answer)
         return MyRetrievalCompletionResult(answer)
-
-# Assume you have initialized your model and MongoDB client
 
 
 # Initialize the completion function with your model and MongoDB client

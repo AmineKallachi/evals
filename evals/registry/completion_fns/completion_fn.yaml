@@ -2,6 +2,6 @@ completion_fn:
   class: evals.completion_fns.completion_fn:MyRetrievalCompletionFn
   args:
     model: paraphrase-distilroberta-base-v1  # Instantiate your model class here
-    mongo_client: 
+    mongo_client: ""
     retrieval_template: "Use the provided context to answer the question. "
     k: 5  # Number of top fragments to consider
